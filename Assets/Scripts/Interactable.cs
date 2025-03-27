@@ -7,7 +7,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] DialogueTrigger interactablesTrigger;
     [SerializeField] MovementControl player;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D()
     {
         if (player.interacting)
         {
