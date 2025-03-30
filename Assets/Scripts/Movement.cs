@@ -19,6 +19,8 @@ public class MovementControl : MonoBehaviour
     protected Vector2 moveDir;
     protected Rigidbody2D playerRB;
 
+    [SerializeField] private GameObject thunkImg;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,4 +56,12 @@ public class MovementControl : MonoBehaviour
         Debug.Log("interaction occurs");
         interacting = !interacting;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //show lil thunk noise
+        thunkImg.SetActive(true);
+    }
+
+
 }

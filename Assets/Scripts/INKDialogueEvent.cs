@@ -6,6 +6,7 @@ using UnityEngine;
 public class INKDialogueEvent
 {
     public event Action<string> onEnterDialogue;
+    public event Action<int> onUpdateChoiceIndex;
 
     public void EnterDialogue(string knotName)
     {
@@ -14,4 +15,14 @@ public class INKDialogueEvent
             onEnterDialogue(knotName);
         }
     }
+
+    public void UpdateChoiceIndex(int choiceIndex)
+    {
+        if(onUpdateChoiceIndex != null)
+        {
+            onUpdateChoiceIndex(choiceIndex);
+        }
+    }
+
+
 }
